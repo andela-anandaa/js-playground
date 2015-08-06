@@ -5,11 +5,18 @@ var add = function(a, b) {
 var Shape = function(a,b) {
   this.a = a;
   this.b = b;
+  this.ab = [a,b];
 };
 
 var s = new Shape(10,12);
 
 console.log(add.call(s, s.a, s.b));
+
+//Difference between apply and call
+console.log(add.apply(s, s.ab));
+
+//without definite `this`
+console.log(add.call(undefined, 20,56));
 
 //using call to chain contructors for an object
 
